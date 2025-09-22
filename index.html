@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f4f4f4;
+    }
+    header {
+        background: #333;
+        color: #fff;
+        padding: 15px;
+        text-align: center;
+    }
+    nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        background: #444;
+    }
+    nav button {
+        background: #444;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background 0.3s;
+    }
+    nav button:hover {
+        background: #666;
+    }
+    #content {
+        max-width: 900px;
+        margin: 20px auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+        color: #333;
+    }
+    .project, .edu-item, .extra-item {
+        margin-bottom: 10px;
+        padding: 10px;
+        background: #f9f9f9;
+        border-left: 4px solid #333;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>My Portfolio</h1>
+</header>
+
+<nav>
+    <button onclick="showSection('home')">Home</button>
+    <button onclick="showSection('about')">About</button>
+    <button onclick="showSection('edu-activities')">Education & Activities</button>
+    <button onclick="showSection('projects')">Projects</button>
+    <button onclick="showSection('contact')">Contact</button>
+</nav>
+
+<div id="content"></div>
+
+<script>
+    function showSection(section) {
+        let content = document.getElementById('content');
+        if (section === 'home') {
+            content.innerHTML = `
+                <h2>Welcome!</h2>
+                <p>Hello! I am a web developer passionate about building clean and responsive websites.</p>
+            `;
+        } else if (section === 'about') {
+            content.innerHTML = `
+                <h2>About Me</h2>
+                <p>I am a developer with experience in HTML, CSS, and JavaScript. I love creating interactive and user-friendly websites.</p>
+            `;
+        } else if (section === 'edu-activities') {
+            content.innerHTML = `
+                <h2>Education</h2>
+                <div class="edu-item">
+                    <strong>Bachelor of Computer Science (B.Sc.)</strong><br>
+                    Bharathiyar university (2024 - 2027)<br>
+                    Specialization: Web Development & Software Engineering<br>
+                    CGPA: 8.7 / 10
+                </div>
+                
+                <div class="edu-item">
+                    <strong>Higher Secondary Certificate (12th Grade)</strong><br>
+                    ABC Matriculation Higher Secondary School (2018 - 2020)<br>
+                    Subjects: Computer Science, Mathematics, Physics<br>
+                    Percentage: 92%
+                </div>
+                
+                <div class="edu-item">
+                    <strong>Secondary School Leaving Certificate (10th Grade)</strong><br>
+                    ABC Matriculation School (2016 - 2018)<br>
+                    Percentage: 90%
+                </div>
+
+                <h2>Extracurricular Activities</h2>
+                <div class="extra-item"><strong>Sports</strong> - Represented university in football; District-level relay race winner.</div>
+                <div class="extra-item"><strong>Volunteering</strong> - Coding Bootcamps for students; NSS volunteer in blood donation & social service.</div>
+                <div class="extra-item"><strong>Clubs & Competitions</strong> - Robotics Club (built autonomous robots); Hackathon 2022 participant; Debate Club (2nd place, inter-college).</div>
+            `;
+        } else if (section === 'projects') {
+            content.innerHTML = `
+                <h2>My Projects</h2>
+                <div class="project"><strong>Portfolio Website</strong> - A simple responsive portfolio.</div>
+                <div class="project"><strong>To-Do App</strong> - A task management web application.</div>
+                <div class="project"><strong>Calculator</strong> - A simple calculator built with JavaScript.</div>
+            `;
+        } else if (section === 'contact') {
+            content.innerHTML = `
+                <h2>Contact Me</h2>
+                <p>Email: megapriya115@gmail.com</p>
+                <p>Phone:84383108716</p>
+            `;
+        }
+    }
+    // Load Home section by default
+    showSection('home');
+</script>
+
+</body>
+</html>
